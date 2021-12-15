@@ -1,10 +1,8 @@
-%% 增加纹理欠丰富的SAR和光学图像对匹配实验
-% 
 clear all;close all;clc;
 use_gamma = 0;        % 1：使用gamma增强；0：不使用gamma增强
 %% 正常匹配图像对参数
-I_opt = imread('..\data\P3_1_small.tif');
-I_sar = imread('..\data\P3_2_small.tif'); 
+I_opt = imread('..\data\P3_1.tif');
+I_sar = imread('..\data\P3_2.tif'); 
 Th_opt1 = 0.0001;             
 Th_opt2 = 0.0001;              
 Th_sar1 = 0.0001;             
@@ -61,7 +59,7 @@ I_opt = im2double(I_opt);
 I_sar = im2double(I_sar);
 
 I_opt = I_opt + 0.001;       
-I_sar = I_sar + 0.001;       % 防止相应值为0，弱纹理区域
+I_sar = I_sar + 0.001; 
 
 t1 = clock;
 %% PC最大矩点和最小矩点检测
